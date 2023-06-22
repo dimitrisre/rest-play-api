@@ -1,0 +1,6 @@
+A simple rest api with play framework
+
+sbt compile
+sbt run
+
+http://localhost:9000
