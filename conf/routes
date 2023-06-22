@@ -1,0 +1,10 @@
+GET     /                 controllers.HomeController.index()
+GET     /car/:id          controllers.HomeController.get(id: Long)
+GET     /cars             controllers.HomeController.getAll()
+
++ nocsrf
+DELETE  /car/delete/:id    controllers.HomeController.delete(id: Long)
++ nocsrf
+PUT     /car/update        controllers.HomeController.update()
++ nocsrf
+POST    /car/save          controllers.HomeController.save()

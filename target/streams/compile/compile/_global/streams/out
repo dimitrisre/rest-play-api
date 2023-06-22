@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/dimitris/git-repos/rest-play-api/app/repositories/CarRepository.scala:14:73: value findall is not a member of persistence.Persistence[persistence.entities.Car,Long,scala.collection.mutable.ListBuffer][0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean findAll?[0m
+[0m[[0m[31merror[0m] [0m[0m  def findAll(): Either[RepositoryError, List[Car]] = handleIfErrors(db.findall())[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
