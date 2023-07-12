@@ -1,12 +1,9 @@
+import components.{ManagerComponents, RepositoryComponents}
 import controllers.HomeController
-import managers.CarManager
-import persistence.InMemoryPersistence
 import play.api.mvc.EssentialFilter
 import play.filters.HttpFiltersComponents
 import play.api.routing.Router
 import play.api.{Application, ApplicationLoader, BuiltInComponentsFromContext}
-import play.filters.csrf.CSRF
-import repositories.CarRepository
 import router.Routes
 
 
@@ -19,10 +16,11 @@ class RestApplicationLoader extends ApplicationLoader{
 }
 
 class RestApiComponents(context: ApplicationLoader.Context)
-  extends BuiltInComponentsFromContext(context) with HttpFiltersComponents{
+  extends BuiltInComponentsFromContext(context)
+    with HttpFiltersComponents
+    with ManagerComponents
+    with RepositoryComponents {
 
-  lazy val carRepository: CarRepository = new CarRepository(InMemoryPersistence)
-  lazy val carManager: CarManager = new CarManager(carRepository)
   lazy val homeController: HomeController = new HomeController(carManager, controllerComponents)
   lazy val router: Router = new Routes(httpErrorHandler, homeController, "/")
 
