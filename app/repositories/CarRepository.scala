@@ -5,6 +5,7 @@ import persistence.entities.Car
 import repositories.errors.RepositoryError
 
 import scala.collection.mutable.ListBuffer
+import scala.util.Try
 
 class CarRepository(val db: Persistence[Car, Long, ListBuffer]){
   def findById(id: Long): Either[RepositoryError, Option[Car]] = handleIfErrors(db.find(id))
@@ -13,11 +14,7 @@ class CarRepository(val db: Persistence[Car, Long, ListBuffer]){
   def delete(id: Long): Either[RepositoryError, Unit] = handleIfErrors(db.delete(id))
   def findAll(): Either[RepositoryError, List[Car]] = handleIfErrors(db.findAll())
 
-  private def handleIfErrors[A](f: => A) = {
-    try{
-      Right(f)
-    } catch {
-      case e: RuntimeException => Left(RepositoryError(e.getMessage))
-    }
-  }
+  private def handleIfErrors[A](f: => A) =
+    Try(f).fold(e => Left(RepositoryError(e.getMessage)), v => Right(v))
+
 }

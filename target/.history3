@@ -31,3 +31,10 @@
 1687252758992:exit
 1687252774055:run
 1687254780738:exit
+1688551970327:compile
+1688551992547:exit
+1689146319643:;set _root_.scala.collection.Seq(historyPath := None,shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("/private/var/folders/v8/_j29g2lj5pb420zg9ygl8cr80000gn/T/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download, resolveClassifiers");apply -cp "/Users/dimitris/Library/Application Support/JetBrains/IntelliJIdea2022.2/plugins/Scala/repo/org/jetbrains/scala/sbt-structure-extractor_2.12_1.0/2021.3.0/sbt-structure-extractor-2021.3.0.jar" org.jetbrains.sbt.CreateTasks;preferScala2;*/*:dumpStructure
+1689150231094:clean
+1689150232744:compile
+1689150264371:run
+1689150348223:exit
