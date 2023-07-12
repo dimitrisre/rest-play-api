@@ -3,7 +3,6 @@ package managers
 import managers.errors.ManagerError
 import models.CarDTO
 import repositories.CarRepository
-import models.util.CarConversions._
 import repositories.errors.RepositoryError
 
 trait Manager{
